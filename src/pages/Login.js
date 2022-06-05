@@ -51,31 +51,6 @@ function Login() {
   const loginFn = (e) => {
     const userId = document.getElementById("userId").value;
     const password = document.getElementById("password").value;
-
-    const data = {
-      userId: userId,
-      password: password
-    };
-
-    userSignin(data)
-      .then(function (response) {
-        console.log(response);
-        if (response.status === 200) {
-          // userid, email, userType, userStatus, token
-          localStorage.setItem("name", response.data.name);
-        }
-        // customer, engineer, admin
-        if (response.data.userType === "CUSTOMER") {
-          window.location.href = "/customer";
-        }
-      })
-      .catch(function (error) {
-        if (error.response.status === 400) {
-          setMessage(error.response.data.message);
-        } else {
-          console.log(error);
-        }
-      });
   };
 
   return (
@@ -174,7 +149,7 @@ function Login() {
                     <input
                       type="password"
                       className="form-control"
-                      placeholder="password"
+                      placeholder="confirm password"
                       id="password"
                       required
                     />

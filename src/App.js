@@ -20,7 +20,7 @@ function App() {
 
         <Route
           exact
-          path="//"
+          path="/"
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <Login />
