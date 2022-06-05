@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { userSignup, userSignin } from "../auth/auth";
 
 function Login() {
-  const [showSignup, setShowSignup] = useState(false);
+  const [showSignup, setShowSignup] = useState(true);
   const [userSignupData, setUserSignupData] = useState({});
   const [message, setMessage] = useState("");
 
@@ -169,7 +169,6 @@ function Login() {
                       Continue
                     </span>
                   </div>
-                  <div className="text-danger">{message}</div>
                 </form>
               </div>
             )}
